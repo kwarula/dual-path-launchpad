@@ -14,6 +14,33 @@ export default {
     },
     extend: {
       colors: {
+        /* Brand Colors */
+        'trust-primary': {
+          DEFAULT: 'hsl(var(--trust-primary))',
+          light: 'hsl(var(--trust-primary-light))',
+          dark: 'hsl(var(--trust-primary-dark))',
+          foreground: 'hsl(var(--trust-primary-foreground))',
+        },
+        'cta-accent': {
+          DEFAULT: 'hsl(var(--cta-accent))',
+          light: 'hsl(var(--cta-accent-light))',
+          dark: 'hsl(var(--cta-accent-dark))',
+          foreground: 'hsl(var(--cta-accent-foreground))',
+        },
+        'neutral': {
+          50: 'hsl(var(--neutral-50))',
+          100: 'hsl(var(--neutral-100))',
+          200: 'hsl(var(--neutral-200))',
+          300: 'hsl(var(--neutral-300))',
+          400: 'hsl(var(--neutral-400))',
+          500: 'hsl(var(--neutral-500))',
+          600: 'hsl(var(--neutral-600))',
+          700: 'hsl(var(--neutral-700))',
+          800: 'hsl(var(--neutral-800))',
+          900: 'hsl(var(--neutral-900))',
+        },
+        
+        /* Legacy Shadcn Colors */
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -57,6 +84,19 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      fontFamily: {
+        'primary': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+      },
+      boxShadow: {
+        'cta': 'var(--shadow-cta)',
+        'card': 'var(--shadow-card)',
+        'modal': 'var(--shadow-modal)',
+      },
+      backgroundImage: {
+        'gradient-hero': 'var(--gradient-hero)',
+        'gradient-cta': 'var(--gradient-cta)',
+        'gradient-trust': 'var(--gradient-trust)',
       },
       borderRadius: {
         lg: "var(--radius)",
