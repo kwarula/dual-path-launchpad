@@ -47,17 +47,28 @@ export const SocialProofStrip: React.FC<SocialProofStripProps> = ({ language }) 
             </cite>
           </div>
 
-          {/* Trust Video Preview (Placeholder for mentor clip) */}
-          <div className="max-w-md mx-auto mb-4">
-            <div className="video-container aspect-video bg-neutral-100 rounded-xl flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-trust-primary rounded-full flex items-center justify-center mb-3 mx-auto">
-                  <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+          {/* Trust Video Preview */}
+          <div className="max-w-xs mx-auto mb-4">
+            <div className="video-container aspect-[9/16] bg-neutral-100 rounded-xl overflow-hidden relative">
+              <video
+                src="https://res.cloudinary.com/doprdld4l/video/upload/v1757339766/WhatsApp_Video_2025-09-04_at_08.36.40_qt2qyn.mp4"
+                muted
+                loop
+                playsInline
+                className="w-full h-full object-cover"
+                onMouseEnter={(e) => e.currentTarget.play()}
+                onMouseLeave={(e) => e.currentTarget.pause()}
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-12 h-12 bg-trust-primary/80 rounded-full flex items-center justify-center">
+                  <svg className="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z"/>
                   </svg>
                 </div>
-                <p className="body-small text-neutral-600">
-                  {language === 'de' ? 'Vertrauens-Video' : 'Trust Video'}
+              </div>
+              <div className="absolute bottom-2 left-2 right-2">
+                <p className="text-xs text-white font-medium drop-shadow-lg text-center">
+                  {language === 'de' ? 'Ergebnisse variieren. Einsatz ist nötig.' : 'Results vary. Effort required.'}
                 </p>
               </div>
             </div>

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { LeadForm } from '@/components/LeadForm';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
-import heroVariantA from '@/assets/hero-variant-a.jpg';
-import heroVariantB from '@/assets/hero-variant-b.jpg';
+import video3 from '@/assets/video-3.mp4';
+import video4 from '@/assets/video-4.mp4';
 
 interface HeroProps {
   variant: 'A' | 'B';
@@ -48,7 +48,11 @@ const heroContent = {
 export const Hero: React.FC<HeroProps> = ({ variant, language }) => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const content = heroContent[variant][language];
-  const heroImage = variant === 'A' ? heroVariantA : heroVariantB;
+  
+  // Video URLs - using Cloudinary direct URLs for larger files and local for smaller
+  const heroVideo = variant === 'A' 
+    ? 'https://res.cloudinary.com/doprdld4l/video/upload/v1757339770/WhatsApp_Video_2025-09-04_at_08.39.13_lkboa5.mp4'
+    : 'https://res.cloudinary.com/doprdld4l/video/upload/v1757339769/WhatsApp_Video_2025-09-04_at_08.39.01_ep8ywz.mp4';
 
   const scrollToHowItWorks = () => {
     const element = document.getElementById('how-it-works');
@@ -57,11 +61,14 @@ export const Hero: React.FC<HeroProps> = ({ variant, language }) => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Video with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt={`Hero ${variant}`}
+        <video
+          src={heroVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />

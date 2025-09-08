@@ -39,18 +39,29 @@ export const BOFUSection: React.FC<BOFUSectionProps> = ({ variant, language }) =
     <section className="py-20 bg-gradient-to-br from-trust-primary to-trust-primary-dark text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Aspirational Video Background (Placeholder) */}
+          {/* Aspirational Video Background */}
           <div className="mb-12">
-            <div className="video-container aspect-video max-w-2xl mx-auto bg-black/20 border border-white/20">
-              <div className="flex items-center justify-center h-full">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mb-4 mx-auto">
-                    <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+            <div className="max-w-sm mx-auto">
+              <div className="video-container aspect-[9/16] bg-black/20 border border-white/20 rounded-xl overflow-hidden relative">
+                <video
+                  src="https://res.cloudinary.com/doprdld4l/video/upload/v1757339756/WhatsApp_Video_2025-09-04_at_08.36.58_v82yrw.mp4"
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
+                  onMouseEnter={(e) => e.currentTarget.play()}
+                  onMouseLeave={(e) => e.currentTarget.pause()}
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                    <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M8 5v14l11-7z"/>
                     </svg>
                   </div>
-                  <p className="text-white/80">
-                    {language === 'de' ? 'Aspirational Video (Clip 01:29–01:56)' : 'Aspirational Video (Clip 01:29–01:56)'}
+                </div>
+                <div className="absolute bottom-3 left-3 right-3">
+                  <p className="text-xs text-white font-medium drop-shadow-lg text-center">
+                    {language === 'de' ? 'Individuelle Ergebnisse können stark variieren' : 'Individual results may vary significantly'}
                   </p>
                 </div>
               </div>
