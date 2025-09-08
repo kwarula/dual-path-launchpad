@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 
 interface SocialProofStripProps {
   language: 'de' | 'en';
@@ -26,7 +26,20 @@ const content = {
 };
 
 export const SocialProofStrip: React.FC<SocialProofStripProps> = ({ language }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const texts = content[language];
+
+  const togglePlayPause = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
 
   return (
     <section className="trust-strip">
@@ -51,21 +64,32 @@ export const SocialProofStrip: React.FC<SocialProofStripProps> = ({ language }) 
           <div className="max-w-xs mx-auto mb-4">
             <div className="video-container aspect-[9/16] bg-neutral-100 rounded-xl overflow-hidden relative">
               <video
+                ref={videoRef}
                 src="https://res.cloudinary.com/doprdld4l/video/upload/v1757339766/WhatsApp_Video_2025-09-04_at_08.36.40_qt2qyn.mp4"
                 muted
                 loop
                 playsInline
                 className="w-full h-full object-cover"
-                onMouseEnter={(e) => e.currentTarget.play()}
-                onMouseLeave={(e) => e.currentTarget.pause()}
+                onPlay={() => setIsPlaying(true)}
+                onPause={() => setIsPlaying(false)}
               />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-12 h-12 bg-trust-primary/80 rounded-full flex items-center justify-center">
-                  <svg className="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z"/>
-                  </svg>
+              <button
+                onClick={togglePlayPause}
+                className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-all"
+                aria-label={isPlaying ? 'Pause video' : 'Play video'}
+              >
+                <div className="w-12 h-12 bg-trust-primary/80 hover:bg-trust-primary rounded-full flex items-center justify-center transition-all">
+                  {isPlaying ? (
+                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                    </svg>
+                  ) : (
+                    <svg className="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  )}
                 </div>
-              </div>
+              </button>
               <div className="absolute bottom-2 left-2 right-2">
                 <p className="text-xs text-white font-medium drop-shadow-lg text-center">
                   {language === 'de' ? 'Ergebnisse variieren. Einsatz ist nötig.' : 'Results vary. Effort required.'}

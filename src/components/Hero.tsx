@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { LeadForm } from '@/components/LeadForm';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
@@ -47,6 +47,8 @@ const heroContent = {
 
 export const Hero: React.FC<HeroProps> = ({ variant, language }) => {
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const content = heroContent[variant][language];
   
   // Video URLs - using Cloudinary direct URLs for larger files and local for smaller
@@ -59,18 +61,48 @@ export const Hero: React.FC<HeroProps> = ({ variant, language }) => {
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const togglePlayPause = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video with Overlay */}
       <div className="absolute inset-0 z-0">
         <video
+          ref={videoRef}
           src={heroVideo}
           autoPlay
           muted
           loop
           playsInline
           className="w-full h-full object-cover"
+          onPlay={() => setIsPlaying(true)}
+          onPause={() => setIsPlaying(false)}
         />
+        {/* Play/Pause Button Overlay */}
+        <button
+          onClick={togglePlayPause}
+          className="absolute bottom-4 right-4 w-12 h-12 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-all z-10"
+          aria-label={isPlaying ? 'Pause video' : 'Play video'}
+        >
+          {isPlaying ? (
+            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+            </svg>
+          ) : (
+            <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          )}
+        </button>
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
       </div>
 
