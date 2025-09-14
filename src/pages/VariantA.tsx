@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Hero } from '@/components/Hero';
 import { SocialProofStrip } from '@/components/SocialProofStrip';
 import { PainPointsSection } from '@/components/PainPointsSection';
+import { ProductDetailsSection } from '@/components/ProductDetailsSection';
 import { HowItWorksSection } from '@/components/HowItWorksSection';
 import { BOFUSection } from '@/components/BOFUSection';
 import { FAQSection } from '@/components/FAQSection';
@@ -69,6 +70,9 @@ const VariantA: React.FC = () => {
       
       {/* Pain Points Section */}
       <PainPointsSection variant="A" language={language} />
+      
+      {/* Product Details Section */}
+      <ProductDetailsSection language={language} />
       
       {/* How It Works Section */}
       <HowItWorksSection language={language} />

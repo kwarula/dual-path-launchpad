@@ -45,11 +45,11 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({ language }
   const texts = content[language];
 
   return (
-    <section id="how-it-works" className="py-20 bg-gradient-trust">
+    <section id="how-it-works" className="py-16 md:py-24 bg-gradient-trust">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 md:mb-16">
             <h2 className="section-headline mb-6 text-neutral-900">
               {texts.title}
             </h2>
@@ -62,7 +62,7 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({ language }
           </div>
 
           {/* Steps */}
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
             {texts.steps.map((step, index) => (
               <div key={index} className="step-card">
                 <div className="step-number">
@@ -76,21 +76,6 @@ export const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({ language }
                 </p>
               </div>
             ))}
-          </div>
-
-          {/* Arrow Connectors (Desktop) */}
-          <div className="hidden md:flex justify-center items-center mt-8 -mb-8">
-            <div className="flex items-center space-x-8">
-              <div className="w-16 h-0.5 bg-cta-accent"></div>
-              <svg className="w-6 h-6 text-cta-accent" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-              </svg>
-              <div className="w-16 h-0.5 bg-cta-accent"></div>
-              <svg className="w-6 h-6 text-cta-accent" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-              </svg>
-              <div className="w-16 h-0.5 bg-cta-accent"></div>
-            </div>
           </div>
         </div>
       </div>

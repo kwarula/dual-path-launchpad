@@ -1,4 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
+import sarahImg from '@/assets/testimonial-sarah.jpg';
+import marcusImg from '@/assets/testimonial-marcus.jpg';
 
 interface SocialProofStripProps {
   language: 'de' | 'en';
@@ -6,100 +8,87 @@ interface SocialProofStripProps {
 
 const content = {
   de: {
-    main: "Bereits hunderte junge Menschen in Deutschland, Österreich und der Schweiz haben diesen Skill erlernt – und ihr Leben verändert.",
-    testimonial: {
-      text: "Innerhalb von 3 Monaten konnte ich meinen Job kündigen und arbeite jetzt flexibel von überall.",
-      name: "Sarah",
-      location: "München"
-    },
-    disclaimer: "Ergebnisse variieren. Einsatz ist nötig."
+    main: "Bereits über 200 junge Menschen in Deutschland, Österreich und der Schweiz haben durch professionelle Sales-Skills neue Karrierewege eingeschlagen.",
+    testimonials: [
+      {
+        text: "Nach dem Sales Training konnte ich innerhalb von 6 Monaten mein Einkommen um 40% steigern und arbeite jetzt in einem Bereich, der mir wirklich Spaß macht.",
+        name: "Sarah M.",
+        location: "München",
+        role: "Account Managerin",
+        image: sarahImg
+      },
+      {
+        text: "Das strukturierte Sales Coaching hat mir geholfen, aus der Arbeitslosigkeit herauszufinden und eine Position im Vertrieb zu bekommen, wo ich meine Stärken nutzen kann.",
+        name: "Marcus L.",
+        location: "Hamburg", 
+        role: "Sales Representative",
+        image: marcusImg
+      }
+    ],
+    disclaimer: "Individuelle Ergebnisse können variieren. Erfolg erfordert Einsatz und kontinuierliches Lernen."
   },
   en: {
-    main: "Hundreds of young people in Germany, Austria and Switzerland have already learned this skill – and changed their lives.",
-    testimonial: {
-      text: "Within 3 months I was able to quit my job and now work flexibly from anywhere.",
-      name: "Sarah",
-      location: "Munich"
-    },
-    disclaimer: "Results vary. Commitment is necessary."
+    main: "Over 200 young people in Germany, Austria and Switzerland have already embarked on new career paths through professional sales skills.",
+    testimonials: [
+      {
+        text: "After the sales training, I was able to increase my income by 40% within 6 months and now work in a field that I really enjoy.",
+        name: "Sarah M.",
+        location: "Munich",
+        role: "Account Manager",
+        image: sarahImg
+      },
+      {
+        text: "The structured sales coaching helped me get out of unemployment and get a position in sales where I can use my strengths.",
+        name: "Marcus L.",
+        location: "Hamburg",
+        role: "Sales Representative", 
+        image: marcusImg
+      }
+    ],
+    disclaimer: "Individual results may vary. Success requires effort and continuous learning."
   }
 };
 
 export const SocialProofStrip: React.FC<SocialProofStripProps> = ({ language }) => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const texts = content[language];
 
-  const togglePlayPause = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
   return (
-    <section className="trust-strip">
-      <div className="container mx-auto px-4 py-12">
-        <div className="text-center max-w-4xl mx-auto">
+    <section className="trust-strip py-16 md:py-20">
+      <div className="container mx-auto px-4">
+        <div className="text-center max-w-5xl mx-auto">
           {/* Main Social Proof Statement */}
-          <p className="body-large mb-8 font-semibold text-neutral-700">
+          <p className="body-large mb-12 font-semibold text-neutral-700">
             {texts.main}
           </p>
 
-          {/* Testimonial Card */}
-          <div className="social-proof-card max-w-2xl mx-auto mb-6">
-            <blockquote className="body-medium italic mb-4 text-neutral-600">
-              "{texts.testimonial.text}"
-            </blockquote>
-            <cite className="font-semibold text-trust-primary">
-              — {texts.testimonial.name}, {texts.testimonial.location}
-            </cite>
-          </div>
-
-          {/* Trust Video Preview */}
-          <div className="max-w-xs mx-auto mb-4">
-            <div className="video-container aspect-[9/16] bg-neutral-100 rounded-xl overflow-hidden relative">
-              <video
-                ref={videoRef}
-                src="https://res.cloudinary.com/doprdld4l/video/upload/v1757339766/WhatsApp_Video_2025-09-04_at_08.36.40_qt2qyn.mp4"
-                muted
-                loop
-                playsInline
-                className="w-full h-full object-cover"
-                onPlay={() => setIsPlaying(true)}
-                onPause={() => setIsPlaying(false)}
-              />
-              <button
-                onClick={togglePlayPause}
-                className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-all"
-                aria-label={isPlaying ? 'Pause video' : 'Play video'}
-              >
-                <div className="w-12 h-12 bg-trust-primary/80 hover:bg-trust-primary rounded-full flex items-center justify-center transition-all">
-                  {isPlaying ? (
-                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-                    </svg>
-                  ) : (
-                    <svg className="w-5 h-5 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z"/>
-                    </svg>
-                  )}
+          {/* Testimonials Grid */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {texts.testimonials.map((testimonial, index) => (
+              <div key={index} className="social-proof-card">
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-16 h-16 rounded-full overflow-hidden mb-4">
+                    <img 
+                      src={testimonial.image} 
+                      alt={`${testimonial.name} - Testimonial`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <blockquote className="body-medium italic mb-4 text-neutral-600 max-w-md">
+                    "{testimonial.text}"
+                  </blockquote>
+                  <cite className="font-semibold text-trust-primary">
+                    — {testimonial.name}
+                  </cite>
+                  <p className="text-sm text-neutral-500">
+                    {testimonial.role} • {testimonial.location}
+                  </p>
                 </div>
-              </button>
-              <div className="absolute bottom-2 left-2 right-2">
-                <p className="text-xs text-white font-medium drop-shadow-lg text-center">
-                  {language === 'de' ? 'Ergebnisse variieren. Einsatz ist nötig.' : 'Results vary. Effort required.'}
-                </p>
               </div>
-            </div>
+            ))}
           </div>
 
           {/* Disclaimer */}
-          <p className="body-small text-neutral-500 italic">
+          <p className="body-small text-neutral-500 italic max-w-2xl mx-auto">
             {texts.disclaimer}
           </p>
         </div>

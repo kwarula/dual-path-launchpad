@@ -7,29 +7,31 @@ interface FooterProps {
 
 const content = {
   de: {
-    company: "Digital Sales Coaching",
+    company: "K2K Consulting UG",
     contact: "Kontakt",
-    email: "info@example.com",
-    phone: "+49 (0) 123 456 789",
+    email: "info@k2k-consulting.de",
+    phone: "+49 (0) 421 123 456 789",
+    address: "Süderbrokerstr 16, 28259 Bremen",
     legal: "Rechtliches",
     privacy: "Datenschutzerklärung",
     imprint: "Impressum",
     terms: "AGB",
     gdprStatement: "Deine Daten sind bei uns sicher. Keine Weitergabe an Dritte. Du kannst jederzeit Löschung oder Auskunft verlangen.",
-    dataProtectionOfficer: "Datenschutzbeauftragter: privacy@example.com",
+    dataProtectionOfficer: "Datenschutzbeauftragter: privacy@k2k-consulting.de",
     languageSwitch: "Sprache: Deutsch"
   },
   en: {
-    company: "Digital Sales Coaching",
+    company: "K2K Consulting UG", 
     contact: "Contact",
-    email: "info@example.com",
-    phone: "+49 (0) 123 456 789",
+    email: "info@k2k-consulting.de",
+    phone: "+49 (0) 421 123 456 789",
+    address: "Süderbrokerstr 16, 28259 Bremen",
     legal: "Legal",
     privacy: "Privacy Policy",
     imprint: "Imprint",
     terms: "Terms",
     gdprStatement: "Your data is secure with us. No sharing with third parties. You can request deletion or information at any time.",
-    dataProtectionOfficer: "Data Protection Officer: privacy@example.com",
+    dataProtectionOfficer: "Data Protection Officer: privacy@k2k-consulting.de",
     languageSwitch: "Language: English"
   }
 };
@@ -77,6 +79,9 @@ export const Footer: React.FC<FooterProps> = ({ language, onLanguageChange }) =>
                 <a href={`tel:${texts.phone.replace(/\s/g, '')}`} className="hover:text-cta-accent transition-colors">
                   {texts.phone}
                 </a>
+              </p>
+              <p className="text-sm">
+                {texts.address}
               </p>
             </div>
           </div>

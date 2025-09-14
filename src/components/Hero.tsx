@@ -1,9 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { LeadForm } from '@/components/LeadForm';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
-import video3 from '@/assets/video-3.mp4';
-import video4 from '@/assets/video-4.mp4';
+import heroBackground from '@/assets/hero-background.jpg';
 
 interface HeroProps {
   variant: 'A' | 'B';
@@ -30,10 +29,10 @@ const heroContent = {
   B: {
     de: {
       headline: "Reicht es dir, für 1.500 € netto dein Leben zu verschwenden?",
-      subhead: "Es gibt einen Weg raus. Eine Fähigkeit, die dich aus dem Niedriglohn rausführt – und neue Türen öffnet.",
+      subhead: "Es gibt einen Weg raus. Eine Fähigkeit, die dich aus dem Mindestlohn rausführt – und neue Türen öffnet.",
       primaryCta: "Jetzt kostenlos starten",
       secondaryCta: "Mehr erfahren",
-      videoCaption: "Weg aus dem Niedriglohn"
+      videoCaption: "Weg aus dem Mindestlohn"
     },
     en: {
       headline: "Tired of wasting your life for €1,500 net?",
@@ -47,62 +46,21 @@ const heroContent = {
 
 export const Hero: React.FC<HeroProps> = ({ variant, language }) => {
   const [isFormOpen, setIsFormOpen] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const content = heroContent[variant][language];
-  
-  // Video URLs - using Cloudinary direct URLs for larger files and local for smaller
-  const heroVideo = variant === 'A' 
-    ? 'https://res.cloudinary.com/doprdld4l/video/upload/v1757339770/WhatsApp_Video_2025-09-04_at_08.39.13_lkboa5.mp4'
-    : 'https://res.cloudinary.com/doprdld4l/video/upload/v1757339769/WhatsApp_Video_2025-09-04_at_08.39.01_ep8ywz.mp4';
 
   const scrollToHowItWorks = () => {
     const element = document.getElementById('how-it-works');
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const togglePlayPause = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Video with Overlay */}
+      {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <video
-          ref={videoRef}
-          src={heroVideo}
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover"
-          onPlay={() => setIsPlaying(true)}
-          onPause={() => setIsPlaying(false)}
+        <div 
+          className="w-full h-full bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroBackground})` }}
         />
-        {/* Play/Pause Button Overlay */}
-        <button
-          onClick={togglePlayPause}
-          className="absolute bottom-4 right-4 w-12 h-12 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center transition-all z-10"
-          aria-label={isPlaying ? 'Pause video' : 'Play video'}
-        >
-          {isPlaying ? (
-            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-            </svg>
-          ) : (
-            <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z"/>
-            </svg>
-          )}
-        </button>
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
       </div>
 
@@ -151,15 +109,6 @@ export const Hero: React.FC<HeroProps> = ({ variant, language }) => {
               ? "Keine versteckten Kosten. Kostenloses Erstgespräch."
               : "No hidden costs. Free initial consultation."
             }
-          </p>
-        </div>
-      </div>
-
-      {/* Video Caption Overlay */}
-      <div className="absolute bottom-8 left-8 right-8 z-20">
-        <div className="text-center">
-          <p className="text-white font-semibold text-lg drop-shadow-lg">
-            {content.videoCaption}
           </p>
         </div>
       </div>

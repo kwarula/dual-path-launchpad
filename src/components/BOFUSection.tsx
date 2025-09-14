@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { LeadForm } from '@/components/LeadForm';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
@@ -33,65 +33,12 @@ const content = {
 
 export const BOFUSection: React.FC<BOFUSectionProps> = ({ variant, language }) => {
   const [isFormOpen, setIsFormOpen] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const texts = content[language];
 
-  const togglePlayPause = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
   return (
-    <section className="py-20 bg-gradient-to-br from-trust-primary to-trust-primary-dark text-white">
+    <section className="py-16 md:py-24 bg-gradient-to-br from-trust-primary to-trust-primary-dark text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Aspirational Video Background */}
-          <div className="mb-12">
-            <div className="max-w-sm mx-auto">
-              <div className="video-container aspect-[9/16] bg-black/20 border border-white/20 rounded-xl overflow-hidden relative">
-                <video
-                  ref={videoRef}
-                  src="https://res.cloudinary.com/doprdld4l/video/upload/v1757339756/WhatsApp_Video_2025-09-04_at_08.36.58_v82yrw.mp4"
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-full object-cover"
-                  onPlay={() => setIsPlaying(true)}
-                  onPause={() => setIsPlaying(false)}
-                />
-                <button
-                  onClick={togglePlayPause}
-                  className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-all"
-                  aria-label={isPlaying ? 'Pause video' : 'Play video'}
-                >
-                  <div className="w-16 h-16 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all">
-                    {isPlaying ? (
-                      <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-                      </svg>
-                    ) : (
-                      <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
-                    )}
-                  </div>
-                </button>
-                <div className="absolute bottom-3 left-3 right-3">
-                  <p className="text-xs text-white font-medium drop-shadow-lg text-center">
-                    {language === 'de' ? 'Individuelle Ergebnisse können stark variieren' : 'Individual results may vary significantly'}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Headlines */}
           <h2 className="section-headline mb-6 text-white">
             {texts.title}
@@ -111,7 +58,7 @@ export const BOFUSection: React.FC<BOFUSectionProps> = ({ variant, language }) =
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
               <DialogTrigger asChild>
                 <Button variant="cta" size="xl" className="min-w-[280px]">

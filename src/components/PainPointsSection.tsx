@@ -27,7 +27,7 @@ const painContent = {
   B: {
     de: {
       points: [
-        "40–50 Stunden Arbeit für einen Hungerlohn",
+        "40–50 Stunden Arbeit für einen Mindestlohn",
         "Keine Perspektive, keine Freiheit",
         "Frust statt Zukunft"
       ],
@@ -35,7 +35,7 @@ const painContent = {
     },
     en: {
       points: [
-        "40–50 hours of work for starvation wages",
+        "40–50 hours of work for minimum wage",
         "No perspective, no freedom",
         "Frustration instead of future"
       ],
@@ -48,12 +48,12 @@ export const PainPointsSection: React.FC<PainPointsSectionProps> = ({ variant, l
   const content = painContent[variant][language];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Pain Points */}
-          <div className="mb-12">
-            <h2 className="section-headline text-center mb-10 text-neutral-900">
+          <div className="mb-12 md:mb-16">
+            <h2 className="section-headline text-center mb-10 md:mb-12 text-neutral-900">
               {language === 'de' 
                 ? (variant === 'A' ? 'Kennst du das Gefühl?' : 'Reicht es dir nicht auch?')
                 : (variant === 'A' ? 'Do you know that feeling?' : 'Aren\'t you tired of it too?')
@@ -69,7 +69,7 @@ export const PainPointsSection: React.FC<PainPointsSectionProps> = ({ variant, l
 
           {/* Transition Statement */}
           <div className="text-center">
-            <div className="inline-block bg-gradient-to-r from-trust-primary/10 to-cta-accent/10 rounded-2xl p-8">
+            <div className="inline-block bg-gradient-to-r from-trust-primary/10 to-cta-accent/10 rounded-2xl p-6 md:p-8">
               <p className="body-large font-semibold text-trust-primary max-w-3xl">
                 {content.transition}
               </p>
