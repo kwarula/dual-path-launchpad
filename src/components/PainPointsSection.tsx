@@ -9,7 +9,7 @@ const painContent = {
   A: {
     de: {
       points: [
-        "40–50 Stunden arbeiten, nur um 1.500 € netto zu verdienen",
+        "X 40-50 Stunden arbeiten, nur um 1.500 € netto zu verdienen",
         "Kein Raum für deine eigenen Träume",
         "Abhängig vom Chef und seinen Launen"
       ],
