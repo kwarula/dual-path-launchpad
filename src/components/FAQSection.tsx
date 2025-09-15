@@ -6,36 +6,20 @@ interface FAQSectionProps {
 
 const faqContent = {
   de: {
-    title: "Häufige Fragen",
+    title: "Wichtig zu wissen",
     faqs: [
       {
-        question: "Ist das ein Schnell-Reich-Programm?",
-        answer: "Nein. Es ist ein strukturiertes Training. Ergebnisse brauchen Einsatz."
-      },
-      {
-        question: "Kann ich das nebenbei machen?",
-        answer: "Ja, das Programm ist so aufgebaut, dass es auch neben einem Job funktioniert."
-      },
-      {
-        question: "Was kostet der Einstieg?",
-        answer: "Das klären wir im kostenlosen Erstgespräch — ohne Verpflichtung."
+        question: "Was ist das für ein Coaching?",
+        answer: "Wir sind kein staatlich anerkanntes Fernstudium. Unser Coaching ist eine praxisorientierte Begleitung, die dir direkt im Alltag weiterhelfen soll. Es geht nicht um Titel oder Diplome – sondern darum, dass du echte Fähigkeiten entwickelst, die dir neue Chancen eröffnen."
       }
     ]
   },
   en: {
-    title: "Frequently Asked Questions",
+    title: "Important to know",
     faqs: [
       {
-        question: "Is this a get-rich-quick program?",
-        answer: "No. It's structured training. Results require commitment."
-      },
-      {
-        question: "Can I do this on the side?",
-        answer: "Yes, the program is designed to work alongside a job."
-      },
-      {
-        question: "What does entry cost?",
-        answer: "We'll clarify that in the free initial consultation — without obligation."
+        question: "What kind of coaching is this?",
+        answer: "We are not a state-recognized distance learning program. Our coaching is a practice-oriented support that is intended to help you directly in everyday life. It is not about titles or diplomas - but about developing real skills that open up new opportunities for you."
       }
     ]
   }

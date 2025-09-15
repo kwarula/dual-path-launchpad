@@ -7,106 +7,56 @@ interface ProductDetailsSectionProps {
 
 const content = {
   de: {
-    title: "Das Sales Coaching Programm",
-    subtitle: "Strukturiertes Training für deinen Erfolg im Vertrieb",
+    title: "Meine Mission",
+    subtitle: "Ich habe selbst erlebt, wie befreiend es ist, Verkaufen zu können. Es geht nicht nur ums Geld – es geht darum, zu wissen, dass man unabhängig ist. Dass man nicht mehr auf „Glück“ im Job hoffen muss, sondern einen Skill hat, der überall gebraucht wird. Heute begleite ich Menschen wie dich dabei, diese Fähigkeit Schritt für Schritt aufzubauen. Kein Frontalunterricht. Keine graue Theorie. Sondern echtes, praxisnahes Coaching, das sich an deinem Alltag orientiert.",
     features: [
       {
-        title: "Praxisorientierte Module",
-        description: "Lerne die wichtigsten Verkaufstechniken in strukturierten Einheiten, die du sofort anwenden kannst.",
-        icon: "📚"
+        title: "Persönliche Begleitung",
+        description: "Wir sprechen individuell über deine Situation und passen das Coaching darauf an.",
+        icon: "👉"
       },
       {
-        title: "1:1 Mentoring",
-        description: "Persönliche Betreuung durch erfahrene Sales-Profis, die dir bei deinen individuellen Herausforderungen helfen.",
-        icon: "👥"
+        title: "Praxisnah statt Theorie",
+        description: "Alles, was du lernst, kannst du sofort anwenden.",
+        icon: "👉"
       },
       {
-        title: "Flexibles Lernen",
-        description: "Online-Training, das sich deinem Zeitplan anpasst. Lerne wann und wo es für dich passt.",
-        icon: "⏰"
+        title: "Flexibel",
+        description: "Du entscheidest, wann und wo du lernst.",
+        icon: "👉"
       },
       {
-        title: "Praktische Tools",
-        description: "Bewährte Skripte, Templates und Techniken, die du direkt in deinem Job einsetzen kannst.",
-        icon: "🛠️"
-      },
-      {
-        title: "Community Support",
-        description: "Vernetze dich mit anderen Teilnehmern und profitiere vom Austausch mit Gleichgesinnten.",
-        icon: "🤝"
-      },
-      {
-        title: "Zertifizierung",
-        description: "Erhalte ein anerkanntes Zertifikat, das deine erworbenen Sales-Kompetenzen bestätigt.",
-        icon: "🏆"
+        title: "Community",
+        description: "Austausch mit Menschen, die den gleichen Weg gehen.",
+        icon: "👉"
       }
     ],
-    learningPath: {
-      title: "Dein Lernweg",
-      steps: [
-        "Grundlagen des professionellen Verkaufens",
-        "Kundenpsychologie und Bedarfsanalyse", 
-        "Gesprächsführung und Präsentationstechniken",
-        "Einwandbehandlung und Abschlusstechniken",
-        "Digitale Sales-Tools und CRM-Systeme",
-        "Langfristige Kundenbeziehungen aufbauen"
-      ]
-    },
-    guarantee: {
-      title: "Unsere Garantie",
-      text: "Falls du nach 30 Tagen nicht zufrieden bist, erhältst du dein Geld zurück. Wir sind überzeugt von der Qualität unseres Programms."
-    }
   },
   en: {
-    title: "The Sales Coaching Program",
-    subtitle: "Structured training for your success in sales",
+    title: "My Mission",
+    subtitle: "I have experienced for myself how liberating it is to be able to sell. It's not just about money – it's about knowing that you are independent. That you no longer have to hope for 'luck' in your job, but have a skill that is needed everywhere. Today, I support people like you in building this ability step by step. No lectures. No gray theory. But real, practical coaching that is geared to your everyday life.",
     features: [
       {
-        title: "Practice-Oriented Modules", 
-        description: "Learn the most important sales techniques in structured units that you can apply immediately.",
-        icon: "📚"
+        title: "Personal Support",
+        description: "We talk individually about your situation and adapt the coaching accordingly.",
+        icon: "👉"
       },
       {
-        title: "1:1 Mentoring",
-        description: "Personal support from experienced sales professionals who help you with your individual challenges.",
-        icon: "👥"
+        title: "Practical instead of theory",
+        description: "Everything you learn, you can apply immediately.",
+        icon: "👉"
       },
       {
-        title: "Flexible Learning",
-        description: "Online training that adapts to your schedule. Learn when and where it suits you.",
-        icon: "⏰"
+        title: "Flexible",
+        description: "You decide when and where you learn.",
+        icon: "👉"
       },
       {
-        title: "Practical Tools",
-        description: "Proven scripts, templates and techniques that you can use directly in your job.",
-        icon: "🛠️"
-      },
-      {
-        title: "Community Support",
-        description: "Network with other participants and benefit from exchange with like-minded people.",
-        icon: "🤝"
-      },
-      {
-        title: "Certification",
-        description: "Receive a recognized certificate that confirms your acquired sales skills.",
-        icon: "🏆"
+        title: "Community",
+        description: "Exchange with people who are on the same path.",
+        icon: "👉"
       }
-    ],
-    learningPath: {
-      title: "Your Learning Path",
-      steps: [
-        "Fundamentals of professional selling",
-        "Customer psychology and needs analysis",
-        "Conversation management and presentation techniques", 
-        "Objection handling and closing techniques",
-        "Digital sales tools and CRM systems",
-        "Building long-term customer relationships"
-      ]
-    },
-    guarantee: {
-      title: "Our Guarantee",
-      text: "If you're not satisfied after 30 days, you get your money back. We are convinced of the quality of our program."
-    }
+    ]
   }
 };
 
@@ -135,7 +85,7 @@ export const ProductDetailsSection: React.FC<ProductDetailsSectionProps> = ({ la
           </div>
 
           {/* Features Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
             {texts.features.map((feature, index) => (
               <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-neutral-200">
                 <div className="text-3xl mb-4">{feature.icon}</div>
@@ -147,35 +97,6 @@ export const ProductDetailsSection: React.FC<ProductDetailsSectionProps> = ({ la
                 </p>
               </div>
             ))}
-          </div>
-
-          {/* Learning Path */}
-          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-neutral-200 mb-12">
-            <h3 className="text-2xl font-bold mb-8 text-center text-neutral-900">
-              {texts.learningPath.title}
-            </h3>
-            <div className="grid md:grid-cols-2 gap-4">
-              {texts.learningPath.steps.map((step, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-trust-primary text-white rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">
-                    {index + 1}
-                  </div>
-                  <p className="text-neutral-700 leading-relaxed">
-                    {step}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Guarantee */}
-          <div className="bg-gradient-to-r from-trust-primary/5 to-cta-accent/5 rounded-2xl p-8 text-center border border-trust-primary/20">
-            <h3 className="text-xl font-bold mb-4 text-trust-primary">
-              {texts.guarantee.title}
-            </h3>
-            <p className="text-neutral-700 max-w-2xl mx-auto">
-              {texts.guarantee.text}
-            </p>
           </div>
         </div>
       </div>

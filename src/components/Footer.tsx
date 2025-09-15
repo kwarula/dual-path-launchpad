@@ -10,7 +10,6 @@ const content = {
     company: "K2K Consulting UG",
     contact: "Kontakt",
     email: "info@k2k-consulting.de",
-    phone: "+49 (0) 421 123 456 789",
     address: "Süderbrokerstr 16, 28259 Bremen",
     legal: "Rechtliches",
     privacy: "Datenschutzerklärung",
@@ -24,7 +23,6 @@ const content = {
     company: "K2K Consulting UG", 
     contact: "Contact",
     email: "info@k2k-consulting.de",
-    phone: "+49 (0) 421 123 456 789",
     address: "Süderbrokerstr 16, 28259 Bremen",
     legal: "Legal",
     privacy: "Privacy Policy",
@@ -73,11 +71,6 @@ export const Footer: React.FC<FooterProps> = ({ language, onLanguageChange }) =>
               <p>
                 <a href={`mailto:${texts.email}`} className="hover:text-cta-accent transition-colors">
                   {texts.email}
-                </a>
-              </p>
-              <p>
-                <a href={`tel:${texts.phone.replace(/\s/g, '')}`} className="hover:text-cta-accent transition-colors">
-                  {texts.phone}
                 </a>
               </p>
               <p className="text-sm">

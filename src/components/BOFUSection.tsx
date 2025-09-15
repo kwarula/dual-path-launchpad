@@ -10,24 +10,22 @@ interface BOFUSectionProps {
 
 const content = {
   de: {
-    title: "Bereit für den nächsten Schritt?",
-    subtitle: "Sichere dir jetzt dein kostenloses Erstgespräch und erfahre, wie auch du diesen Skill lernen kannst.",
+    title: "Bereit für den ersten Schritt?",
+    subtitle: "👉 Sichere dir jetzt ein kostenloses Erstgespräch.\n👉 15 Minuten, die dir Klarheit geben können.\n👉 100 % unverbindlich.",
     cta: {
-      A: "Kostenloses Gespräch sichern",
-      B: "Jetzt kostenlos starten"
+      A: "Sichere dir jetzt ein kostenloses Erstgespräch",
+      B: "Sichere dir jetzt ein kostenloses Erstgespräch"
     },
-    calendar: "📅 Verfügbare Termine anzeigen",
-    urgency: "⏰ Nur noch wenige Plätze für diese Woche verfügbar"
+    calendar: "📅 Hier Termin auswählen"
   },
   en: {
-    title: "Ready for the next step?",
-    subtitle: "Secure your free initial consultation now and find out how you too can learn this skill.",
+    title: "Ready for the first step?",
+    subtitle: "👉 Secure your free initial consultation now.\n👉 15 minutes that can give you clarity.\n👉 100% non-binding.",
     cta: {
-      A: "Secure Free Consultation",
-      B: "Start Free Now"
+      A: "Secure your free initial consultation now",
+      B: "Secure your free initial consultation now"
     },
-    calendar: "📅 Show available appointments",
-    urgency: "⏰ Only a few spots left for this week"
+    calendar: "📅 Select date here"
   }
 };
 
@@ -44,18 +42,9 @@ export const BOFUSection: React.FC<BOFUSectionProps> = ({ variant, language }) =
             {texts.title}
           </h2>
           
-          <p className="body-large mb-8 text-white/90 max-w-2xl mx-auto">
+          <p className="body-large mb-8 text-white/90 max-w-2xl mx-auto whitespace-pre-line">
             {texts.subtitle}
           </p>
-
-          {/* Urgency Indicator */}
-          <div className="mb-8">
-            <div className="inline-flex items-center bg-cta-accent/20 border border-cta-accent/30 rounded-full px-4 py-2">
-              <span className="text-cta-accent-light font-medium">
-                {texts.urgency}
-              </span>
-            </div>
-          </div>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">

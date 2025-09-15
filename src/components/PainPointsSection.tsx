@@ -9,37 +9,37 @@ const painContent = {
   A: {
     de: {
       points: [
-        "                                        40-50 Stunden arbeiten, nur um 1.500 € netto zu verdienen",
-        "                                        Kein Raum für deine eigenen Träume",
-        "                                        Abhängig vom Chef und seinen Launen"
+        "Du arbeitest Woche für Woche hart. 40 Stunden, manchmal mehr.",
+        "Und trotzdem bleibt am Ende des Monats kaum etwas übrig.",
+        "Keine Freiheit, keine Perspektive – nur das Gefühl, im Kreis zu laufen."
       ],
-      transition: "Es gibt einen anderen Weg – mit einem Skill, der gefragt ist und dir Kontrolle über deine Zukunft gibt."
+      transition: "Ich habe selbst erlebt, wie befreiend es ist, Verkaufen zu können. Es geht nicht nur ums Geld – es geht darum, zu wissen, dass man unabhängig ist. Dass man nicht mehr auf „Glück“ im Job hoffen muss, sondern einen Skill hat, der überall gebraucht wird."
     },
     en: {
       points: [
-        "Work 40–50 hours just to earn €1,500 net",
-        "No room for your own dreams",
-        "Dependent on your boss and their moods"
+        "You work hard week after week. 40 hours, sometimes more.",
+        "And yet, at the end of the month, there's hardly anything left.",
+        "No freedom, no perspective – just the feeling of running in circles."
       ],
-      transition: "There's another way – with a skill that's in demand and gives you control over your future."
+      transition: "I have experienced for myself how liberating it is to be able to sell. It's not just about money – it's about knowing that you are independent. That you no longer have to hope for 'luck' in your job, but have a skill that is needed everywhere."
     }
   },
   B: {
     de: {
       points: [
-        "40–50 Stunden Arbeit für einen Mindestlohn",
-        "Keine Perspektive, keine Freiheit",
-        "Frust statt Zukunft"
+        "Du arbeitest Woche für Woche hart. 40 Stunden, manchmal mehr.",
+        "Und trotzdem bleibt am Ende des Monats kaum etwas übrig.",
+        "Keine Freiheit, keine Perspektive – nur das Gefühl, im Kreis zu laufen."
       ],
-      transition: "Mit einem Skill kannst du sofort einen neuen Weg einschlagen – und dein Leben in Bewegung bringen."
+      transition: "Ich habe selbst erlebt, wie befreiend es ist, Verkaufen zu können. Es geht nicht nur ums Geld – es geht darum, zu wissen, dass man unabhängig ist. Dass man nicht mehr auf „Glück“ im Job hoffen muss, sondern einen Skill hat, der überall gebraucht wird."
     },
     en: {
       points: [
-        "40–50 hours of work for minimum wage",
-        "No perspective, no freedom",
-        "Frustration instead of future"
+        "You work hard week after week. 40 hours, sometimes more.",
+        "And yet, at the end of the month, there's hardly anything left.",
+        "No freedom, no perspective – just the feeling of running in circles."
       ],
-      transition: "With a skill you can immediately take a new path – and get your life moving."
+      transition: "I have experienced for myself how liberating it is to be able to sell. It's not just about money – it's about knowing that you are independent. That you no longer have to hope for 'luck' in your job, but have a skill that is needed everywhere."
     }
   }
 };
