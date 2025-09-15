@@ -9,9 +9,9 @@ const painContent = {
   A: {
     de: {
       points: [
-        "X 40-50 Stunden arbeiten, nur um 1.500 € netto zu verdienen",
-        "Kein Raum für deine eigenen Träume",
-        "Abhängig vom Chef und seinen Launen"
+        "                                        X 40-50 Stunden arbeiten, nur um 1.500 € netto zu verdienen",
+        "                                        Kein Raum für deine eigenen Träume",
+        "                                        Abhängig vom Chef und seinen Launen"
       ],
       transition: "Es gibt einen anderen Weg – mit einem Skill, der gefragt ist und dir Kontrolle über deine Zukunft gibt."
     },
