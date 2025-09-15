@@ -17,7 +17,6 @@ const formContent = {
   de: {
     firstName: "Vorname",
     email: "E-Mail-Adresse",
-    phone: "Telefonnummer (WhatsApp möglich)",
     situation: "Aktuelle Situation",
     urgency: "Wie dringend möchtest du starten?",
     consent: "Ich stimme zu, dass meine Daten zur Kontaktaufnahme und für Werbezwecke verarbeitet werden. Datenschutz & Widerruf:",
@@ -46,7 +45,6 @@ const formContent = {
   en: {
     firstName: "First Name",
     email: "Email Address",
-    phone: "Phone Number (WhatsApp possible)",
     situation: "Current Situation",
     urgency: "How urgently do you want to start?",
     consent: "I agree that my data may be processed for contact and advertising purposes. Privacy & Withdrawal:",
@@ -78,7 +76,6 @@ export const LeadForm: React.FC<LeadFormProps> = ({ variant, language, onSuccess
   const [formData, setFormData] = useState({
     firstName: '',
     email: '',
-    phone: '',
     situation: '',
     urgency: '',
     consent: false
@@ -100,10 +97,6 @@ export const LeadForm: React.FC<LeadFormProps> = ({ variant, language, onSuccess
       newErrors.email = content.errors.required;
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = content.errors.emailInvalid;
-    }
-
-    if (!formData.phone.trim()) {
-      newErrors.phone = content.errors.required;
     }
 
     if (!formData.situation) {
@@ -221,7 +214,6 @@ export const LeadForm: React.FC<LeadFormProps> = ({ variant, language, onSuccess
       setFormData({
         firstName: '',
         email: '',
-        phone: '',
         situation: '',
         urgency: '',
         consent: false
@@ -286,24 +278,6 @@ export const LeadForm: React.FC<LeadFormProps> = ({ variant, language, onSuccess
           />
           {errors.email && (
             <p className="text-sm text-destructive mt-1">{errors.email}</p>
-          )}
-        </div>
-
-        {/* Phone */}
-        <div>
-          <Label htmlFor="phone" className="form-label">
-            {content.phone} *
-          </Label>
-          <Input
-            id="phone"
-            type="tel"
-            value={formData.phone}
-            onChange={(e) => updateFormData('phone', e.target.value)}
-            className={`form-field ${errors.phone ? 'border-destructive' : ''}`}
-            placeholder={content.phone}
-          />
-          {errors.phone && (
-            <p className="text-sm text-destructive mt-1">{errors.phone}</p>
           )}
         </div>
 

@@ -47,10 +47,10 @@ export const BOFUSection: React.FC<BOFUSectionProps> = ({ variant, language }) =
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <div className="flex justify-center items-center mb-12">
             <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
               <DialogTrigger asChild>
-                <Button variant="cta" size="xl" className="min-w-[280px]">
+                <Button variant="cta" size="xl" className="w-full sm:w-auto sm:min-w-[240px] max-w-[320px]">
                   {texts.cta[variant]}
                 </Button>
               </DialogTrigger>
@@ -62,14 +62,6 @@ export const BOFUSection: React.FC<BOFUSectionProps> = ({ variant, language }) =
                 />
               </DialogContent>
             </Dialog>
-
-            <Button 
-              variant="cta-outline" 
-              size="xl" 
-              className="min-w-[240px] border-white/30 text-white hover:bg-white/10"
-            >
-              {texts.calendar}
-            </Button>
           </div>
 
           {/* Trust Elements */}

@@ -80,7 +80,7 @@ export const Hero: React.FC<HeroProps> = ({ variant, language }) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
               <DialogTrigger asChild>
-                <Button variant="cta" size="xl" className="min-w-[280px]">
+                <Button variant="cta" size="xl" className="w-full sm:w-auto sm:min-w-[240px] max-w-[320px]">
                   {content.primaryCta}
                 </Button>
               </DialogTrigger>
@@ -97,7 +97,7 @@ export const Hero: React.FC<HeroProps> = ({ variant, language }) => {
               variant="cta-outline" 
               size="xl" 
               onClick={scrollToHowItWorks}
-              className="min-w-[200px] border-white/30 text-white hover:bg-white/10"
+              className="w-full sm:w-auto sm:min-w-[180px] max-w-[240px] border-white/30 text-white hover:bg-white/10"
             >
               {content.secondaryCta}
             </Button>

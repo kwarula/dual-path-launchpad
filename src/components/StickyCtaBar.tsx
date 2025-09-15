@@ -51,7 +51,7 @@ export const StickyCtaBar: React.FC<StickyCtaBarProps> = ({ variant, language })
             <Button 
               variant="cta" 
               size="lg" 
-              className="w-full max-w-sm mx-auto block"
+              className="w-full max-w-xs mx-auto block"
             >
               {texts.cta[variant]}
             </Button>

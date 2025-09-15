@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '@/assets/eb-closing-logo.png';
 
 interface FooterProps {
   language: 'de' | 'en';
@@ -43,9 +44,16 @@ export const Footer: React.FC<FooterProps> = ({ language, onLanguageChange }) =>
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="font-bold text-lg mb-4 text-white">
-              {texts.company}
-            </h3>
+            <div className="mb-4">
+              <img 
+                src={logo} 
+                alt="EB Closing Logo" 
+                className="h-12 w-auto mb-3"
+              />
+              <h3 className="font-bold text-lg text-white">
+                {texts.company}
+              </h3>
+            </div>
             <p className="text-neutral-300 mb-4">
               {language === 'de' 
                 ? "Professionelles Sales Training für den DACH-Raum"
