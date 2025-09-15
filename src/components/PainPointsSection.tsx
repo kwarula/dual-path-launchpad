@@ -9,7 +9,7 @@ const painContent = {
   A: {
     de: {
       points: [
-        "                                        X 40-50 Stunden arbeiten, nur um 1.500 € netto zu verdienen",
+        "                                        40-50 Stunden arbeiten, nur um 1.500 € netto zu verdienen",
         "                                        Kein Raum für deine eigenen Träume",
         "                                        Abhängig vom Chef und seinen Launen"
       ],
@@ -101,12 +101,7 @@ export const PainPointsSection: React.FC<PainPointsSectionProps> = ({ variant, l
                     
                     {/* Pain Point Content */}
                     <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="inline-flex items-center justify-center w-6 h-6 bg-red-100 text-red-600 rounded-full text-sm font-bold">
-                          {index + 1}
-                        </span>
-                        <div className="h-px bg-gradient-to-r from-red-200 to-transparent flex-1"></div>
-                      </div>
+                      <div className="h-px bg-gradient-to-r from-red-200 to-transparent mb-4"></div>
                       
                       <p className="text-lg md:text-xl font-semibold text-neutral-800 leading-relaxed">
                         {point}
