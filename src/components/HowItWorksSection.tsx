@@ -6,36 +6,36 @@ interface HowItWorksSectionProps {
 
 const content = {
   de: {
-    title: "So funktioniert's",
+    title: "Dein möglicher Weg",
     steps: [
       {
-        title: "Kostenloses Erstgespräch sichern",
-        description: "In einem unverbindlichen Gespräch lernen wir uns kennen und besprechen deine Situation."
+        title: "Erstgespräch (kostenlos & unverbindlich)",
+        description: "Wir sprechen über deine aktuelle Situation und deine Ziele."
       },
       {
-        title: "Gemeinsam prüfen, ob das Modell zu dir passt",
-        description: "Wir schauen ehrlich, ob unser Programm zu deinen Zielen und deiner Lebenssituation passt."
+        title: "Entscheidung",
+        description: "Gemeinsam klären wir, ob und wie wir dich begleiten können."
       },
       {
-        title: "Skill lernen – und neue Chancen eröffnen",
-        description: "Mit strukturiertem Training und persönlicher Betreuung entwickelst du die Fähigkeiten für deine neue Zukunft."
+        title: "Begleitung starten",
+        description: "Du lernst Schritt für Schritt, wie Verkauf funktioniert – mit Praxis, Feedback und Austausch."
       }
     ]
   },
   en: {
-    title: "How It Works",
+    title: "Your Possible Path",
     steps: [
       {
-        title: "Secure Free Initial Consultation",
-        description: "In a non-binding conversation, we get to know each other and discuss your situation."
+        title: "Initial Consultation (free & non-binding)",
+        description: "We talk about your current situation and your goals."
       },
       {
-        title: "Together Check If The Model Fits You",
-        description: "We honestly look at whether our program fits your goals and life situation."
+        title: "Decision",
+        description: "Together we clarify if and how we can support you."
       },
       {
-        title: "Learn Skill – And Open New Opportunities",
-        description: "With structured training and personal support, you develop the skills for your new future."
+        title: "Start Coaching",
+        description: "You will learn step by step how sales works – with practice, feedback and exchange."
       }
     ]
   }

@@ -12,15 +12,15 @@ interface HeroProps {
 const heroContent = {
   A: {
     de: {
-      headline: "Bist du bereit, dein 9–5 hinter dir zu lassen?",
-      subhead: "Lerne eine Fähigkeit, die dir neue Karrierechancen und echte Freiheit bringt – egal ob Zeit oder Ort.",
+      headline: "🚀 Dein Weg in eine erfolgreiche Karriere im Vertrieb",
+      subhead: "Stell dir vor: Du arbeitest Woche für Woche hart. 40 Stunden, manchmal mehr. Und trotzdem bleibt am Ende des Monats kaum etwas übrig. Keine Freiheit, keine Perspektive – nur das Gefühl, im Kreis zu laufen.",
       primaryCta: "Kostenloses Erstgespräch sichern",
       secondaryCta: "Mehr erfahren",
       videoCaption: "Neue Karrierewege entdecken"
     },
     en: {
-      headline: "Ready to leave your 9-5 behind?",
-      subhead: "Learn a skill that brings you new career opportunities and real freedom – regardless of time or place.",
+      headline: "🚀 Your Path to a Successful Career in Sales",
+      subhead: "Imagine working hard week after week. 40 hours, sometimes more. And yet, at the end of the month, there's hardly anything left. No freedom, no perspective – just the feeling of running in circles.",
       primaryCta: "Secure Free Consultation",
       secondaryCta: "Learn More",
       videoCaption: "Discover new career paths"
@@ -28,16 +28,16 @@ const heroContent = {
   },
   B: {
     de: {
-      headline: "Reicht es dir, für 1.500 € netto dein Leben zu verschwenden?",
-      subhead: "Es gibt einen Weg raus. Eine Fähigkeit, die dich aus dem Mindestlohn rausführt – und neue Türen öffnet.",
-      primaryCta: "Jetzt kostenlos starten",
+      headline: "🚀 Dein Weg in eine erfolgreiche Karriere im Vertrieb",
+      subhead: "Stell dir vor: Du arbeitest Woche für Woche hart. 40 Stunden, manchmal mehr. Und trotzdem bleibt am Ende des Monats kaum etwas übrig. Keine Freiheit, keine Perspektive – nur das Gefühl, im Kreis zu laufen.",
+      primaryCta: "Kostenloses Erstgespräch sichern",
       secondaryCta: "Mehr erfahren",
       videoCaption: "Weg aus dem Mindestlohn"
     },
     en: {
-      headline: "Tired of wasting your life for €1,500 net?",
-      subhead: "There's a way out. A skill that leads you out of low wages – and opens new doors.",
-      primaryCta: "Start Free Now",
+      headline: "🚀 Your Path to a Successful Career in Sales",
+      subhead: "Imagine working hard week after week. 40 hours, sometimes more. And yet, at the end of the month, there's hardly anything left. No freedom, no perspective – just the feeling of running in circles.",
+      primaryCta: "Secure Free Consultation",
       secondaryCta: "Learn More",
       videoCaption: "Escape low wages"
     }
