@@ -1,11 +1,9 @@
 import React from 'react';
 import logo from '@/assets/eb-closing-logo.png';
-
 interface FooterProps {
   language: 'de' | 'en';
   onLanguageChange: (lang: 'de' | 'en') => void;
 }
-
 const content = {
   de: {
     company: "K2K Consulting UG",
@@ -21,7 +19,7 @@ const content = {
     languageSwitch: "Sprache: Deutsch"
   },
   en: {
-    company: "K2K Consulting UG", 
+    company: "K2K Consulting UG",
     contact: "Contact",
     email: "info@k2k-consulting.de",
     address: "Süderbrokerstr 16, 28259 Bremen",
@@ -34,37 +32,27 @@ const content = {
     languageSwitch: "Language: English"
   }
 };
-
-export const Footer: React.FC<FooterProps> = ({ language, onLanguageChange }) => {
+export const Footer: React.FC<FooterProps> = ({
+  language,
+  onLanguageChange
+}) => {
   const texts = content[language];
-
-  return (
-    <footer className="bg-foreground text-white py-12">
+  return <footer className="bg-foreground text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
             <div className="mb-4">
-              <img 
-                src={logo} 
-                alt="EB Closing Logo" 
-                className="h-12 w-auto mb-3"
-              />
+              <img src={logo} alt="EB Closing Logo" className="h-12 w-auto mb-3" />
               <h3 className="font-bold text-lg text-white">
                 {texts.company}
               </h3>
             </div>
             <p className="text-neutral-300 mb-4">
-              {language === 'de' 
-                ? "Professionelles Sales Training für den DACH-Raum"
-                : "Professional Sales Training for the DACH Region"
-              }
+              {language === 'de' ? "Professionelles Sales Training für den DACH-Raum" : "Professional Sales Training for the DACH Region"}
             </p>
             <div className="flex space-x-4">
-              <button
-                onClick={() => onLanguageChange(language === 'de' ? 'en' : 'de')}
-                className="text-cta-accent hover:text-cta-accent-light transition-colors"
-              >
+              <button onClick={() => onLanguageChange(language === 'de' ? 'en' : 'de')} className="text-cta-accent hover:text-cta-accent-light transition-colors">
                 {language === 'de' ? '🇬🇧 EN' : '🇩🇪 DE'}
               </button>
             </div>
@@ -103,11 +91,7 @@ export const Footer: React.FC<FooterProps> = ({ language, onLanguageChange }) =>
                   {texts.imprint}
                 </a>
               </p>
-              <p>
-                <a href="/agb" className="text-neutral-300 hover:text-cta-accent transition-colors">
-                  {texts.terms}
-                </a>
-              </p>
+              
             </div>
           </div>
 
@@ -132,6 +116,5 @@ export const Footer: React.FC<FooterProps> = ({ language, onLanguageChange }) =>
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
