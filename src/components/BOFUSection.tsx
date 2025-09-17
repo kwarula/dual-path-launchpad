@@ -42,16 +42,18 @@ export const BOFUSection: React.FC<BOFUSectionProps> = ({ variant, language }) =
             {texts.title}
           </h2>
           
-          <p className="body-large mb-8 text-white/90 max-w-2xl mx-auto whitespace-pre-line">
-            {texts.subtitle}
-          </p>
+          <div className="max-w-2xl mx-auto mb-10">
+            <p className="body-large text-white/90 whitespace-pre-line leading-relaxed">
+              {texts.subtitle}
+            </p>
+          </div>
 
           {/* CTAs */}
-          <div className="flex justify-center items-center mb-12">
+          <div className="flex justify-center items-center mb-12 px-4">
             <Dialog open={isFormOpen} onOpenChange={setIsFormOpen}>
               <DialogTrigger asChild>
-                <Button variant="cta" size="xl" className="w-full sm:w-auto sm:min-w-[240px] max-w-[320px]">
-                  {texts.cta[variant]}
+                <Button variant="cta" size="xl" className="w-full sm:w-auto sm:max-w-[400px] min-w-0 px-6">
+                  <span className="truncate">{texts.cta[variant]}</span>
                 </Button>
               </DialogTrigger>
               <DialogContent className="sm:max-w-md">
