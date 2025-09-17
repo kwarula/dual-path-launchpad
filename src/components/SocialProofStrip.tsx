@@ -1,6 +1,6 @@
 import React from 'react';
-import sarahImg from '@/assets/testimonial-sarah-new.jpg';
-import marcusImg from '@/assets/testimonial-marcus-new.jpg';
+import sarahImg from '@/assets/testimonial-girl.jpg';
+import marcusImg from '@/assets/testimonial-businessman.jpg';
 
 interface SocialProofStripProps {
   language: 'de' | 'en';

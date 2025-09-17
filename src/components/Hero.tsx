@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { LeadForm } from '@/components/LeadForm';
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
-import heroBackground from '@/assets/hero-background.jpg';
+import heroBackground from '@/assets/hero-new.jpg';
 
 interface HeroProps {
   variant: 'A' | 'B';
