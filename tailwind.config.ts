@@ -39,11 +39,11 @@ export default {
           800: 'hsl(var(--neutral-800))',
           900: 'hsl(var(--neutral-900))',
         },
+        'section-bg-alt': 'hsl(var(--section-bg-alt))',
         
         /* Legacy Shadcn Colors */
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
-        "input-bg": "hsl(var(--input-bg))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

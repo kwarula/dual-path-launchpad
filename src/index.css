@@ -8,32 +8,35 @@
 
 @layer base {
   :root {
-    /* Brand Colors - New Palette from Screenshot */
-    --background: 0 0% 10%; /* #1a1a1a */
-    --foreground: 0 0% 100%; /* #FFFFFF */
+    /* Brand Colors - New Light Theme */
+    --background: 0 0% 100%; /* White */
+    --foreground: 0 0% 0%; /* Black */
     
     /* Yellow Accent */
-    --trust-primary: 56 99% 54%; /* #FEE715 */
-    --trust-primary-light: 56 99% 64%;
-    --trust-primary-dark: 56 99% 44%;
-    --trust-primary-foreground: 0 0% 10%; /* #1a1a1a */
+    --trust-primary: 51 100% 50%; /* #FFD700 */
+    --trust-primary-light: 51 100% 60%;
+    --trust-primary-dark: 51 100% 40%;
+    --trust-primary-foreground: 0 0% 0%; /* Black */
     
-    --cta-accent: 56 99% 54%; /* #FEE715 */
-    --cta-accent-light: 56 99% 64%;
-    --cta-accent-dark: 56 99% 44%;
-    --cta-accent-foreground: 0 0% 10%; /* #1a1a1a */
+    --cta-accent: 51 100% 50%; /* #FFD700 */
+    --cta-accent-light: 51 100% 60%;
+    --cta-accent-dark: 51 100% 40%;
+    --cta-accent-foreground: 0 0% 0%; /* Black */
     
     /* Neutral Grays */
     --neutral-50: 0 0% 98%;
     --neutral-100: 0 0% 95%;
     --neutral-200: 0 0% 88%;
-    --neutral-300: 0 0% 78%; /* #C8C8C8 - for input background */
+    --neutral-300: 0 0% 78%;
     --neutral-400: 0 0% 64%;
     --neutral-500: 0 0% 47%;
     --neutral-600: 0 0% 38%;
     --neutral-700: 0 0% 28%;
     --neutral-800: 0 0% 18%;
     --neutral-900: 0 0% 12%;
+
+    /* Alt Section Background */
+    --section-bg-alt: 45 25% 96%; /* #F7F6F2 */
     
     /* Semantic Colors */
     --success: 142 76% 36%;
@@ -44,37 +47,36 @@
     --primary: var(--trust-primary);
     --primary-foreground: var(--trust-primary-foreground);
     
-    --secondary: var(--neutral-800);
-    --secondary-foreground: var(--neutral-100);
+    --secondary: var(--neutral-100);
+    --secondary-foreground: var(--neutral-900);
     
-    --muted: var(--neutral-800);
+    --muted: var(--neutral-100);
     --muted-foreground: var(--neutral-500);
     
     --accent: var(--cta-accent);
     --accent-foreground: var(--cta-accent-foreground);
     
-    --card: var(--neutral-900);
+    --card: var(--background);
     --card-foreground: var(--foreground);
     
-    --popover: var(--neutral-900);
+    --popover: var(--background);
     --popover-foreground: var(--foreground);
     
     --destructive: var(--danger);
     --destructive-foreground: 0 0% 100%;
     
-    --border: var(--neutral-700);
-    --input: var(--neutral-300); /* For input border */
-    --input-bg: var(--neutral-300);
+    --border: var(--neutral-200);
+    --input: var(--neutral-200);
     --ring: var(--trust-primary);
     
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(var(--trust-primary-dark)), hsl(var(--trust-primary)));
     --gradient-cta: linear-gradient(135deg, hsl(var(--cta-accent)), hsl(var(--cta-accent-light)));
-    --gradient-trust: linear-gradient(180deg, hsl(var(--neutral-800)), hsl(var(--background)));
+    --gradient-trust: linear-gradient(180deg, hsl(var(--neutral-50)), hsl(var(--background)));
     
     /* Shadows */
     --shadow-cta: 0 4px 14px 0 hsl(var(--cta-accent) / 0.25);
-    --shadow-card: 0 2px 10px 0 hsl(var(--neutral-900) / 0.15);
+    --shadow-card: 0 2px 10px 0 hsl(var(--neutral-300) / 0.15);
     --shadow-modal: 0 25px 50px -12px hsl(var(--neutral-900) / 0.25);
     
     /* Typography Scale */
@@ -86,49 +88,37 @@
     
     --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 10%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 56 99% 54%;
-    --sidebar-primary-foreground: 0 0% 10%;
-    --sidebar-accent: 0 0% 20%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 56 99% 54%;
+    /* Sidebar colors updated for consistency */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 0%;
+    --sidebar-primary: 51 100% 50%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 95%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 88%;
+    --sidebar-ring: 51 100% 50%;
   }
 
   .dark {
-    /* Kept for consistency, but same as root now */
-    --background: 0 0% 10%; /* #1a1a1a */
-    --foreground: 0 0% 100%; /* #FFFFFF */
-
-    /* Yellow Accent */
-    --trust-primary: 56 99% 54%; /* #FEE715 */
-    --trust-primary-light: 56 99% 64%;
-    --trust-primary-dark: 56 99% 44%;
-    --trust-primary-foreground: 0 0% 10%; /* #1a1a1a */
+    /* Dark Mode consistent with new branding */
+    --background: 0 0% 0%; /* Black */
+    --foreground: 0 0% 100%; /* White */
     
-    --cta-accent: 56 99% 54%; /* #FEE715 */
-    --cta-accent-light: 56 99% 64%;
-    --cta-accent-dark: 56 99% 44%;
-    --cta-accent-foreground: 0 0% 10%; /* #1a1a1a */
+    --trust-primary: 51 100% 50%; /* #FFD700 */
+    --trust-primary-light: 51 100% 60%;
+    --trust-primary-dark: 51 100% 40%;
+    --trust-primary-foreground: 0 0% 0%; /* Black */
     
-    /* Neutral Grays */
-    --neutral-50: 0 0% 98%;
-    --neutral-100: 0 0% 95%;
-    --neutral-200: 0 0% 88%;
-    --neutral-300: 0 0% 78%; /* #C8C8C8 - for input background */
-    --neutral-400: 0 0% 64%;
-    --neutral-500: 0 0% 47%;
-    --neutral-600: 0 0% 38%;
-    --neutral-700: 0 0% 28%;
-    --neutral-800: 0 0% 18%;
-    --neutral-900: 0 0% 12%;
+    --cta-accent: 51 100% 50%; /* #FFD700 */
+    --cta-accent-light: 51 100% 60%;
+    --cta-accent-dark: 51 100% 40%;
+    --cta-accent-foreground: 0 0% 0%; /* Black */
 
     --card: var(--neutral-900);
-    --card-foreground: var(--foreground);
+    --card-foreground: var(--neutral-50);
     
     --popover: var(--neutral-900);
-    --popover-foreground: var(--foreground);
+    --popover-foreground: var(--neutral-50);
     
     --secondary: var(--neutral-800);
     --secondary-foreground: var(--neutral-100);
@@ -137,7 +127,7 @@
     --muted-foreground: var(--neutral-400);
     
     --border: var(--neutral-700);
-    --input: var(--neutral-300);
+    --input: var(--neutral-700);
     --ring: var(--trust-primary-light);
   }
 }
