@@ -56,7 +56,7 @@ const Index = () => {
           {/* Variant A - Ambitious Career Changer */}
           <Card className="cursor-pointer hover:shadow-lg transition-shadow" onClick={() => navigate('/variant-a' + window.location.search)}>
             <CardHeader>
-              <CardTitle className="text-trust-primary">
+              <CardTitle className="text-neutral-900">
                 Variant A - Karriere-Wechsler
               </CardTitle>
             </CardHeader>
@@ -76,7 +76,7 @@ const Index = () => {
           {/* Variant B - Job Seeker / Unemployed */}
           <Card className="cursor-pointer hover:shadow-lg transition-shadow" onClick={() => navigate('/variant-b' + window.location.search)}>
             <CardHeader>
-              <CardTitle className="text-trust-primary">
+              <CardTitle className="text-neutral-900">
                 Variant B - Niedriglohn-Ausbrecher
               </CardTitle>
             </CardHeader>

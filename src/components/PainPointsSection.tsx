@@ -132,7 +132,7 @@ export const PainPointsSection: React.FC<PainPointsSectionProps> = ({ variant, l
                   </div>
                 </div>
                 
-                <p className="text-xl md:text-2xl font-bold text-trust-primary mb-4 leading-relaxed max-w-4xl mx-auto">
+                <p className="text-xl md:text-2xl font-bold text-neutral-900 mb-4 leading-relaxed max-w-4xl mx-auto">
                   {content.transition}
                 </p>
                 
