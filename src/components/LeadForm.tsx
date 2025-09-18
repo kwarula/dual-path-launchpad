@@ -191,19 +191,14 @@ export const LeadForm: React.FC<LeadFormProps> = ({ variant, language, onSuccess
       });
 
       // Webhook to CRM (Zapier/Make/n8n)
-      const webhookUrl = process.env.VITE_WEBHOOK_URL || localStorage.getItem('webhook_url');
-      if (webhookUrl) {
-        await fetch(webhookUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          mode: 'no-cors',
-          body: JSON.stringify(leadData)
-        }).catch(() => {
-          console.log('Webhook delivery failed, lead data logged locally');
-        });
-      }
+      const webhookUrl = "https://hook.eu2.make.com/ubwhqcfk9ayhwep3k67ow2k8x3e1i5j5";
+      await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(leadData)
+      });
 
       toast({
         title: language === 'de' ? "Erfolgreich gesendet!" : "Successfully sent!",
